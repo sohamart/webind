@@ -140,6 +140,34 @@ app.get('/robots.txt', async (req, res) => {
   }
 });
 
+// Database auto-connector middleware (critical for Serverless & Vercel invocations)
+let isInitialized = false;
+let initPromise = null;
+
+const ensureInitialized = async () => {
+  if (isInitialized) return;
+  if (!initPromise) {
+    initPromise = (async () => {
+      try {
+        await connectDB();
+        await seedAll(false);
+        isInitialized = true;
+      } catch (err) {
+        console.error('[Initialization Error]:', err);
+        isInitialized = true;
+      }
+    })();
+  }
+  await initPromise;
+};
+
+app.use(async (req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    await ensureInitialized();
+  }
+  next();
+});
+
 // ==========================================
 // API ROUTES MOUNTING
 // ==========================================
@@ -171,20 +199,20 @@ app.use(errorHandler);
 // Boot Server
 const startServer = async () => {
   try {
-    await connectDB();
-    await seedAll(false);
+    await ensureInitialized();
 
-    app.listen(PORT, () => {
-      console.log(`====================================================`);
-      console.log(`⚡ WEBIND GROUP ENGINE ONLINE`);
-      console.log(`⚡ Port: http://localhost:${PORT}`);
-      console.log(`⚡ Mode: ${process.env.NODE_ENV || 'development'}`);
-      console.log(`⚡ Superadmin: ${process.env.ADMIN_DEFAULT_EMAIL || 'admin@webindgroup.com'}`);
-      console.log(`====================================================`);
-    });
+    if (!process.env.VERCEL) {
+      app.listen(PORT, () => {
+        console.log(`====================================================`);
+        console.log(`⚡ WEBIND GROUP ENGINE ONLINE`);
+        console.log(`⚡ Port: http://localhost:${PORT}`);
+        console.log(`⚡ Mode: ${process.env.NODE_ENV || 'development'}`);
+        console.log(`⚡ Superadmin: ${process.env.ADMIN_DEFAULT_EMAIL || 'admin@webindgroup.com'}`);
+        console.log(`====================================================`);
+      });
+    }
   } catch (err) {
     console.error('Failed to initialize server:', err);
-    process.exit(1);
   }
 };
 

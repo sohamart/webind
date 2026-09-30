@@ -10,6 +10,17 @@
       "lastLogin": null,
       "createdAt": "2026-09-30T14:42:03.762Z",
       "updatedAt": "2026-09-30T14:42:03.763Z"
+    },
+    {
+      "_id": "f001592063d23a936d6009fd",
+      "name": "Webind Superadmin",
+      "email": "sohamduttabwn@gmail.com",
+      "password": "$2b$10$g6Y3yi9PYswohypB3uKVbeKOM6pnbmfZ/VQI9pqoJNn1.VBO16Cta",
+      "role": "superadmin",
+      "avatar": "/assets/webind-symbol.png",
+      "lastLogin": null,
+      "createdAt": "2026-09-30T17:30:03.450Z",
+      "updatedAt": "2026-09-30T17:30:03.450Z"
     }
   ],
   "brands": [

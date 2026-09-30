@@ -4,6 +4,10 @@ let isConnected = false;
 let useEmbeddedStore = false;
 
 const connectDB = async () => {
+  if (isConnected || useEmbeddedStore) {
+    return mongoose.connection;
+  }
+
   const mongoUri = process.env.MONGODB_URI;
 
   if (mongoUri && mongoUri.trim() !== '') {
@@ -17,14 +21,12 @@ const connectDB = async () => {
       console.log(`[MongoDB] Connected successfully: ${conn.connection.host}`);
       return conn;
     } catch (err) {
-      console.warn(`[MongoDB Notice] External connection failed: ${err.message}`);
+      console.warn(`[MongoDB Notice] External connection failed: ${err.message}. Falling back to embedded store.`);
     }
   }
 
   // Graceful zero-friction mode: Embedded ecosystem document store
   console.log('[System Engine] Activating high-resilience Embedded Data Engine.');
-  console.log('[System Engine] All Brand CRUD, Settings, Media & Auth will persist to /server/data/ecosystem-db.json');
-  console.log('[System Engine] To switch to MongoDB Atlas, set MONGODB_URI in your .env file.');
   useEmbeddedStore = true;
   return null;
 };
