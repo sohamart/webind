@@ -5,10 +5,14 @@ import MobileNav from './MobileNav';
 import CommandPalette from '../search/CommandPalette';
 import LiquidBackground from '../common/LiquidBackground';
 import SmoothScroll from '../common/SmoothScroll';
+import GlobalPageTransition from '../common/GlobalPageTransition';
 
 export const AppShell = ({ children }) => {
   return (
     <div className="relative min-h-screen bg-black text-white flex flex-col selection:bg-white selection:text-black overflow-x-hidden antialiased">
+      {/* 0. Global 60FPS Obsidian Shutter Page Transition (Covers Navbar & Page without Stutter) */}
+      <GlobalPageTransition />
+
       {/* 1. Global Lenis Inertial Smooth Momentum Scrolling */}
       <SmoothScroll />
 
@@ -25,7 +29,7 @@ export const AppShell = ({ children }) => {
       <CommandPalette />
 
       {/* 6. Main Content Area */}
-      <main className="relative z-10 flex-1 w-full pb-24 md:pb-16 md:pt-24">
+      <main className="relative z-10 flex-1 w-full pb-24 pt-16 md:pb-16 md:pt-24">
         {children}
       </main>
 

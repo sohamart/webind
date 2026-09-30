@@ -66,68 +66,11 @@ const AppContent = () => {
     }
   }
 
-  return (
-    <AnimatePresence mode="wait" initial={false}>
+  // Admin CMS Routes
+  if (isAdmin) {
+    return (
       <Routes location={location} key={location.pathname}>
-        {/* ==========================================
-            PUBLIC NATIVE-APP-LIKE ROUTES
-            ========================================== */}
-        <Route
-          path="/"
-          element={
-            <AppShell>
-              <PageTransition>
-                <HomePage />
-              </PageTransition>
-            </AppShell>
-          }
-        />
-        <Route
-          path="/brands"
-          element={
-            <AppShell>
-              <PageTransition>
-                <BrandsPage />
-              </PageTransition>
-            </AppShell>
-          }
-        />
-        <Route
-          path="/brands/:slug"
-          element={
-            <AppShell>
-              <PageTransition>
-                <BrandDetailPage />
-              </PageTransition>
-            </AppShell>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <AppShell>
-              <PageTransition>
-                <AboutPage />
-              </PageTransition>
-            </AppShell>
-          }
-        />
-        <Route
-          path="/more"
-          element={
-            <AppShell>
-              <PageTransition>
-                <MorePage />
-              </PageTransition>
-            </AppShell>
-          }
-        />
-
-        {/* ==========================================
-            ADMIN CMS PORTAL ROUTES
-            ========================================== */}
         <Route path="/admin/login" element={<AdminLoginPage />} />
-
         <Route
           path="/admin"
           element={
@@ -176,20 +119,22 @@ const AppContent = () => {
             </ProtectedAdminRoute>
           }
         />
-
-        {/* 404 NOT FOUND */}
-        <Route
-          path="*"
-          element={
-            <AppShell>
-              <PageTransition>
-                <NotFoundPage />
-              </PageTransition>
-            </AppShell>
-          }
-        />
       </Routes>
-    </AnimatePresence>
+    );
+  }
+
+  // Public Routes — Wrapped in Persistent AppShell (60FPS Global Page Transition)
+  return (
+    <AppShell>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/brands" element={<BrandsPage />} />
+        <Route path="/brands/:slug" element={<BrandDetailPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/more" element={<MorePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </AppShell>
   );
 };
 

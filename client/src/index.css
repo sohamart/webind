@@ -98,6 +98,40 @@
     0 25px 50px -15px rgba(0, 0, 0, 0.9);
 }
 
+/* ========================================================
+   ARCHITECTURAL SCULPTED GEOMETRIES & SHIMMERS
+   ======================================================== */
+
+.card-sculpt-delta {
+  border-radius: 40px 16px 40px 16px;
+}
+
+.card-sculpt-reactor {
+  border-radius: 48px;
+}
+
+.card-sculpt-matrix {
+  border-radius: 16px 40px 16px 40px;
+}
+
+@keyframes pulseTrack {
+  0%, 100% { opacity: 0.2; transform: scaleX(0.98); }
+  50% { opacity: 0.8; transform: scaleX(1); }
+}
+
+.animate-pulse-track {
+  animation: pulseTrack 4s ease-in-out infinite;
+}
+
+@keyframes signalFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-signal-flow {
+  animation: signalFlow 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
 /* App-like Touch Feedback */
 .tap-bounce {
   transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);

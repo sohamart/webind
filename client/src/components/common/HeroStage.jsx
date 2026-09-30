@@ -7,12 +7,7 @@ import {
   Cpu,
   Cloud,
   ArrowRight,
-  Shield,
-  Activity,
-  Globe,
-  Sparkles,
 } from 'lucide-react';
-import { WebindSymbol } from './WebindLogo';
 
 const STAGE_BRANDS = [
   {
@@ -71,37 +66,37 @@ export const HeroStage = () => {
   const Icon = activeBrand.icon;
 
   const { scrollY } = useScroll();
-  const rotateX = useTransform(scrollY, [0, 350], [10, 0]);
-  const scale = useTransform(scrollY, [0, 350], [0.97, 1]);
-  const opacity = useTransform(scrollY, [0, 200], [0.96, 1]);
+  const rotateX = useTransform(scrollY, [0, 300], [6, 0]);
+  const scale = useTransform(scrollY, [0, 300], [0.98, 1]);
+  const opacity = useTransform(scrollY, [0, 150], [0.98, 1]);
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-2 sm:px-4 my-6 sm:my-10 md:my-14 perspective-1000">
+    <div className="w-full max-w-3xl lg:max-w-4xl mx-auto px-4 my-4 sm:my-6 md:my-8 overflow-hidden">
       <motion.div
         style={{ rotateX, scale, opacity }}
         transition={{ type: 'spring', stiffness: 100, damping: 30 }}
-        className="relative rounded-3xl liquid-glass overflow-hidden"
+        className="relative rounded-3xl liquid-glass overflow-hidden w-full border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
       >
         {/* Top Console Bar */}
-        <div className="flex items-center justify-between px-3 sm:px-7 py-2.5 sm:py-3.5 border-b border-white/[0.08] bg-white/[0.02] select-none gap-2">
-          <div className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
-            <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
-            <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
-            <span className="w-2.5 h-2.5 rounded-full bg-white/20 inline-block" />
-            <span className="ml-2 font-mono text-[10px] sm:text-xs text-zinc-400 tracking-widest uppercase hidden lg:inline">
+        <div className="flex items-center justify-between px-3 sm:px-5 py-2 sm:py-2.5 border-b border-white/[0.08] bg-white/[0.02] select-none gap-2 w-full min-w-0 overflow-hidden">
+          <div className="flex items-center space-x-1.5 shrink-0">
+            <span className="w-2 h-2 rounded-full bg-white/20 inline-block" />
+            <span className="w-2 h-2 rounded-full bg-white/20 inline-block" />
+            <span className="w-2 h-2 rounded-full bg-white/20 inline-block" />
+            <span className="ml-1.5 font-mono text-[9px] sm:text-[10px] text-zinc-400 tracking-widest uppercase hidden sm:inline">
               WEBIND // CONSOLE
             </span>
           </div>
 
           {/* Brand Switcher Tabs with Animated Slider */}
-          <div className="flex items-center space-x-1 p-1 rounded-full bg-white/[0.04] border border-white/[0.08] overflow-x-auto scrollbar-none max-w-full">
+          <div className="flex items-center space-x-1 p-0.5 sm:p-1 rounded-full bg-white/[0.04] border border-white/[0.08] overflow-x-auto scrollbar-none min-w-0 shrink">
             {STAGE_BRANDS.map((brand) => {
               const isSelected = brand.id === activeBrandId;
               return (
                 <button
                   key={brand.id}
                   onClick={() => setActiveBrandId(brand.id)}
-                  className="relative px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-mono uppercase tracking-wider transition-colors whitespace-nowrap"
+                  className="relative px-2.5 sm:px-3 py-1 rounded-full text-[9px] sm:text-[11px] font-mono uppercase tracking-wider transition-colors whitespace-nowrap shrink-0"
                 >
                   {isSelected && (
                     <motion.div
@@ -123,16 +118,16 @@ export const HeroStage = () => {
           </div>
         </div>
 
-        {/* Console Stage Body */}
-        <div className="p-5 sm:p-8 md:p-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        {/* Console Stage Body (Proportionate & Sleek on PC/Laptop) */}
+        <div className="p-4 sm:p-6 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
           {/* Left Column: Brand Info & Live Telemetry */}
-          <div className="md:col-span-7 space-y-4 text-left">
-            <div className="flex items-center space-x-2.5">
-              <span className="text-[10px] font-mono tracking-widest text-zinc-300 uppercase bg-white/[0.06] border border-white/10 px-3 py-1 rounded-full">
+          <div className="md:col-span-7 space-y-3 text-left">
+            <div className="flex items-center space-x-2">
+              <span className="text-[9px] font-mono tracking-widest text-zinc-300 uppercase bg-white/[0.06] border border-white/10 px-2.5 py-0.5 rounded-full">
                 {activeBrand.category}
               </span>
               <span
-                className={`text-[9px] font-mono uppercase px-2.5 py-0.5 rounded-full font-bold flex items-center space-x-1.5 ${
+                className={`text-[8px] font-mono uppercase px-2 py-0.5 rounded-full font-bold flex items-center space-x-1.5 ${
                   activeBrand.status === 'ACTIVE'
                     ? 'bg-emerald-950/70 text-emerald-300 border border-emerald-500/30'
                     : 'bg-amber-950/70 text-amber-300 border border-amber-500/30'
@@ -148,26 +143,26 @@ export const HeroStage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 {activeBrand.name}
               </h3>
-              <p className="text-xs sm:text-sm font-medium text-zinc-300 mt-1">
+              <p className="text-xs font-medium text-zinc-300 mt-0.5">
                 {activeBrand.tagline}
               </p>
             </div>
 
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
+            <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed font-normal">
               {activeBrand.description}
             </p>
 
             {/* Live Metrics Grid for this Brand */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-2.5 pt-3 border-t border-white/[0.08]">
+            <div className="grid grid-cols-3 gap-2 pt-2.5 border-t border-white/[0.08]">
               {Object.entries(activeBrand.metrics).map(([key, val]) => (
-                <div key={key} className="p-2 sm:p-3 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-[9px] font-mono uppercase text-zinc-400 block truncate">
+                <div key={key} className="p-1.5 sm:p-2 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                  <span className="text-[8px] font-mono uppercase text-zinc-400 block truncate">
                     {key}
                   </span>
-                  <span className="text-xs sm:text-sm font-mono font-bold text-white tracking-tight mt-0.5 block truncate">
+                  <span className="text-xs font-mono font-bold text-white tracking-tight mt-0.5 block truncate">
                     {val}
                   </span>
                 </div>
@@ -175,35 +170,35 @@ export const HeroStage = () => {
             </div>
 
             {/* Direct Link Action */}
-            <div className="pt-2">
+            <div className="pt-1">
               <Link
                 to={`/brands/${activeBrand.id}`}
-                className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-wider hover:bg-zinc-200 transition shadow-[0_0_20px_rgba(255,255,255,0.2)] tap-bounce"
+                className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full bg-white text-black font-extrabold text-[11px] uppercase tracking-wider hover:bg-zinc-200 transition shadow-[0_0_15px_rgba(255,255,255,0.2)] tap-bounce"
               >
                 <span>OPEN BRAND OS</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Visual Preview Media with Liquid Reflection */}
+          {/* Right Column: Visual Preview Media */}
           <div className="md:col-span-5 relative">
-            <div className="relative aspect-video md:aspect-square rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group">
+            <div className="relative aspect-[16/10] md:h-52 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 group shadow-md">
               <img
                 src={activeBrand.previewUrl}
                 alt={activeBrand.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-5">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-lg">
-                    <Icon className="w-5 h-5" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-3.5">
+                <div className="flex items-center space-x-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-lg shrink-0">
+                    <Icon className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-white block">
+                    <span className="text-xs font-bold text-white block">
                       {activeBrand.name}
                     </span>
-                    <span className="text-[10px] font-mono text-zinc-300">
+                    <span className="text-[9px] font-mono text-zinc-300">
                       DEPLOYED // GLOBAL
                     </span>
                   </div>

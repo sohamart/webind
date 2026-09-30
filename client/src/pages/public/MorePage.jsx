@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   RotateCcw,
-  Sun,
-  Moon,
   Shield,
   Download,
   CheckCircle2,
@@ -21,12 +19,10 @@ import {
 import { WebindSymbol } from '../../components/common/WebindLogo';
 import LiquidGlassCard from '../../components/common/LiquidGlassCard';
 import { useAppState } from '../../context/AppStateContext';
-import { useTheme } from '../../context/ThemeContext';
 import { useToast } from '../../components/common/Toast';
 
 export const MorePage = () => {
   const { replayOnboarding, settings, brands } = useAppState();
-  const { theme, toggleTheme } = useTheme();
   const { addToast } = useToast();
 
   const [installPrompt, setInstallPrompt] = useState(null);
@@ -116,46 +112,8 @@ export const MorePage = () => {
         <div className="rounded-3xl liquid-glass overflow-hidden divide-y divide-white/[0.06]">
           <div className="px-5 py-3 bg-white/[0.02]">
             <span className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">
-              EXPERIENCE & APPEARANCE
+              EXPERIENCE & CONTROLS
             </span>
-          </div>
-
-          {/* Theme Control */}
-          <div className="p-4 sm:p-5 flex items-center justify-between">
-            <div className="flex items-center space-x-3.5">
-              <div className="w-9 h-9 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center text-zinc-300">
-                {theme === 'dark' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-              </div>
-              <div>
-                <div className="text-xs sm:text-sm font-bold text-white">Appearance Theme</div>
-                <div className="text-[11px] text-zinc-400">
-                  Switch between Deep Obsidian and High-Contrast Light
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center p-1 rounded-full bg-black/50 border border-white/10">
-              <button
-                onClick={() => theme !== 'dark' && toggleTheme()}
-                className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase font-bold transition ${
-                  theme === 'dark'
-                    ? 'bg-white text-black shadow-sm'
-                    : 'text-zinc-500 hover:text-zinc-300'
-                }`}
-              >
-                Dark
-              </button>
-              <button
-                onClick={() => theme === 'dark' && toggleTheme()}
-                className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase font-bold transition ${
-                  theme !== 'dark'
-                    ? 'bg-white text-black shadow-sm'
-                    : 'text-zinc-500 hover:text-zinc-300'
-                }`}
-              >
-                Light
-              </button>
-            </div>
           </div>
 
           {/* Replay Onboarding */}

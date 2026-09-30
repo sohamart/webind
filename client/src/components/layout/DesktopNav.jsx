@@ -1,9 +1,8 @@
 import React from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Search, Sun, Moon, Shield } from 'lucide-react';
+import { Search, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { WebindSymbol } from '../common/WebindLogo';
-import { useTheme } from '../../context/ThemeContext';
 import { useAppState } from '../../context/AppStateContext';
 
 const links = [
@@ -15,7 +14,6 @@ const links = [
 
 export const DesktopNav = () => {
   const location = useLocation();
-  const { theme, toggleTheme } = useTheme();
   const { setCommandPaletteOpen } = useAppState();
 
   // Hide in admin
@@ -85,15 +83,6 @@ export const DesktopNav = () => {
             <kbd className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-zinc-300 border border-white/10">
               ⌘K
             </kbd>
-          </button>
-
-          {/* Theme Toggle */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full text-zinc-400 hover:text-white hover:bg-white/10 transition tap-bounce"
-            title="Toggle Theme"
-          >
-            {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
           {/* Admin Direct Access */}
