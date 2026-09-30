@@ -39,21 +39,19 @@
   }
 }
 
-/* Custom Sleek Scrollbar */
+/* ========================================================
+   COMPLETELY HIDE ALL SCROLLBARS ACROSS ENTIRE WEB APP
+   (Per explicit user request: "gota web a kono scroll bar thakbe na")
+   ======================================================== */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
 }
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.16);
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-html.light ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
+
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 /* ========================================================

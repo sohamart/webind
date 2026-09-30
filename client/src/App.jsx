@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { AppStateProvider, useAppState } from './context/AppStateContext';
@@ -9,6 +10,7 @@ import { ToastProvider } from './components/common/Toast';
 import AppShell from './components/layout/AppShell';
 import SplashScreen from './components/onboarding/SplashScreen';
 import OnboardingFlow from './components/onboarding/OnboardingFlow';
+import PageTransition from './components/common/PageTransition';
 
 // Public Pages
 import HomePage from './pages/public/HomePage';
@@ -65,115 +67,129 @@ const AppContent = () => {
   }
 
   return (
-    <Routes>
-      {/* ==========================================
-          PUBLIC NATIVE-APP-LIKE ROUTES
-          ========================================== */}
-      <Route
-        path="/"
-        element={
-          <AppShell>
-            <HomePage />
-          </AppShell>
-        }
-      />
-      <Route
-        path="/brands"
-        element={
-          <AppShell>
-            <BrandsPage />
-          </AppShell>
-        }
-      />
-      <Route
-        path="/brands/:slug"
-        element={
-          <AppShell>
-            <BrandDetailPage />
-          </AppShell>
-        }
-      />
-      <Route
-        path="/about"
-        element={
-          <AppShell>
-            <AboutPage />
-          </AppShell>
-        }
-      />
-      <Route
-        path="/more"
-        element={
-          <AppShell>
-            <MorePage />
-          </AppShell>
-        }
-      />
+    <AnimatePresence mode="wait" initial={false}>
+      <Routes location={location} key={location.pathname}>
+        {/* ==========================================
+            PUBLIC NATIVE-APP-LIKE ROUTES
+            ========================================== */}
+        <Route
+          path="/"
+          element={
+            <AppShell>
+              <PageTransition>
+                <HomePage />
+              </PageTransition>
+            </AppShell>
+          }
+        />
+        <Route
+          path="/brands"
+          element={
+            <AppShell>
+              <PageTransition>
+                <BrandsPage />
+              </PageTransition>
+            </AppShell>
+          }
+        />
+        <Route
+          path="/brands/:slug"
+          element={
+            <AppShell>
+              <PageTransition>
+                <BrandDetailPage />
+              </PageTransition>
+            </AppShell>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <AppShell>
+              <PageTransition>
+                <AboutPage />
+              </PageTransition>
+            </AppShell>
+          }
+        />
+        <Route
+          path="/more"
+          element={
+            <AppShell>
+              <PageTransition>
+                <MorePage />
+              </PageTransition>
+            </AppShell>
+          }
+        />
 
-      {/* ==========================================
-          ADMIN CMS PORTAL ROUTES
-          ========================================== */}
-      <Route path="/admin/login" element={<AdminLoginPage />} />
+        {/* ==========================================
+            ADMIN CMS PORTAL ROUTES
+            ========================================== */}
+        <Route path="/admin/login" element={<AdminLoginPage />} />
 
-      <Route
-        path="/admin"
-        element={
-          <ProtectedAdminRoute>
-            <AdminDashboardPage />
-          </ProtectedAdminRoute>
-        }
-      />
-      <Route
-        path="/admin/brands"
-        element={
-          <ProtectedAdminRoute>
-            <AdminBrandsPage />
-          </ProtectedAdminRoute>
-        }
-      />
-      <Route
-        path="/admin/homepage"
-        element={
-          <ProtectedAdminRoute>
-            <AdminHomepagePage />
-          </ProtectedAdminRoute>
-        }
-      />
-      <Route
-        path="/admin/media"
-        element={
-          <ProtectedAdminRoute>
-            <AdminMediaPage />
-          </ProtectedAdminRoute>
-        }
-      />
-      <Route
-        path="/admin/activity"
-        element={
-          <ProtectedAdminRoute>
-            <AdminActivityPage />
-          </ProtectedAdminRoute>
-        }
-      />
-      <Route
-        path="/admin/settings"
-        element={
-          <ProtectedAdminRoute>
-            <AdminSettingsPage />
-          </ProtectedAdminRoute>
-        }
-      />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedAdminRoute>
+              <AdminDashboardPage />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin/brands"
+          element={
+            <ProtectedAdminRoute>
+              <AdminBrandsPage />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin/homepage"
+          element={
+            <ProtectedAdminRoute>
+              <AdminHomepagePage />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin/media"
+          element={
+            <ProtectedAdminRoute>
+              <AdminMediaPage />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin/activity"
+          element={
+            <ProtectedAdminRoute>
+              <AdminActivityPage />
+            </ProtectedAdminRoute>
+          }
+        />
+        <Route
+          path="/admin/settings"
+          element={
+            <ProtectedAdminRoute>
+              <AdminSettingsPage />
+            </ProtectedAdminRoute>
+          }
+        />
 
-      {/* 404 NOT FOUND */}
-      <Route
-        path="*"
-        element={
-          <AppShell>
-            <NotFoundPage />
-          </AppShell>
-        }
-      />
-    </Routes>
+        {/* 404 NOT FOUND */}
+        <Route
+          path="*"
+          element={
+            <AppShell>
+              <PageTransition>
+                <NotFoundPage />
+              </PageTransition>
+            </AppShell>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

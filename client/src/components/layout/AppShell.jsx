@@ -5,7 +5,6 @@ import MobileNav from './MobileNav';
 import CommandPalette from '../search/CommandPalette';
 import LiquidBackground from '../common/LiquidBackground';
 import SmoothScroll from '../common/SmoothScroll';
-import ScrollProgressBar from '../common/ScrollProgressBar';
 
 export const AppShell = ({ children }) => {
   return (
@@ -13,27 +12,24 @@ export const AppShell = ({ children }) => {
       {/* 1. Global Lenis Inertial Smooth Momentum Scrolling */}
       <SmoothScroll />
 
-      {/* 2. Top Minimalist White/Silver Scroll Progress Bar */}
-      <ScrollProgressBar />
-
-      {/* 3. Apple Pro Minimalist Dark Background */}
+      {/* 2. Apple Pro Minimalist Dark Background */}
       <LiquidBackground />
 
-      {/* 4. Desktop Floating Liquid Navigation Capsule */}
+      {/* 3. Desktop Floating Liquid Navigation Capsule */}
       <DesktopNav />
 
-      {/* 5. Mobile Top Liquid Header */}
+      {/* 4. Mobile Top Liquid Header */}
       <Header />
 
-      {/* 6. Global Command Palette (⌘K) */}
+      {/* 5. Global Command Palette (⌘K) */}
       <CommandPalette />
 
-      {/* 7. Main Content Area */}
+      {/* 6. Main Content Area */}
       <main className="relative z-10 flex-1 w-full pb-24 md:pb-16 md:pt-24">
         {children}
       </main>
 
-      {/* 8. Mobile Native Bottom Navigation Dock */}
+      {/* 7. Mobile Native Bottom Navigation Dock */}
       <MobileNav />
     </div>
   );
