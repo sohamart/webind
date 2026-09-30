@@ -50,14 +50,46 @@ export const HomePage = () => {
         </div>
 
         {/* ======================================================
-            1. PREMIUM ROTATING INDIAN SOVEREIGN CHAKRA ORBIT LOGO
-            Majestic size (not tiny, not huge) & 100% geometric circle
+            1. SINGLE UNIFIED INDIAN TECH CAPSULE BANNER
+            Positioned gracefully on top with clean, airy spacing
+            ====================================================== */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full max-w-2xl px-2 mb-6 sm:mb-7 z-10"
+        >
+          <Link
+            to={settings?.announcement?.link || '/brands'}
+            className="flex items-center justify-between px-3.5 sm:px-5 py-2.5 rounded-full liquid-glass-pill text-zinc-300 hover:text-white text-xs transition group gap-2.5 border border-white/10 hover:border-white/25 w-full min-w-0 overflow-hidden shadow-[0_4px_25px_rgba(0,0,0,0.6)]"
+          >
+            <div className="flex items-center space-x-2.5 min-w-0 flex-1 overflow-hidden">
+              {/* Sleek Indian Tricolor Micro-Indicator */}
+              <span className="flex items-center space-x-1 shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF9933] animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#138808]" />
+              </span>
+              <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-300 font-bold px-2 py-0.5 rounded-full bg-white/[0.06] border border-white/10 shrink-0">
+                BHARAT TECH STACK
+              </span>
+              <span className="text-zinc-200 font-medium truncate text-[11px] sm:text-xs min-w-0 flex-1">
+                Sovereign Indian Digital Ventures &bull; Bengaluru &bull; Kolkata &bull; NCR
+              </span>
+            </div>
+            <ArrowRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white group-hover:translate-x-1 transition-transform shrink-0" />
+          </Link>
+        </motion.div>
+
+        {/* ======================================================
+            2. PREMIUM ROTATING INDIAN SOVEREIGN CHAKRA ORBIT LOGO
+            Positioned right below banner (Majestic 100% Circle)
             ====================================================== */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="relative mb-6 sm:mb-7 flex items-center justify-center pointer-events-none z-10 w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] shrink-0"
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="relative mb-6 sm:mb-8 flex items-center justify-center pointer-events-none z-10 w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] shrink-0"
         >
           {/* Subtle Saffron & Emerald Ambient Circular Aura */}
           <div className="absolute w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-tr from-[#138808]/20 via-white/10 to-[#FF9933]/25 blur-xl pointer-events-none" />
@@ -107,38 +139,6 @@ export const HomePage = () => {
               className="w-full h-full object-contain filter contrast-150 mix-blend-screen drop-shadow-[0_0_10px_rgba(255,255,255,0.85)] select-none rounded-full"
             />
           </div>
-        </motion.div>
-
-        {/* ======================================================
-            2. SINGLE UNIFIED INDIAN TECH CAPSULE BANNER
-            Positioned right below the logo with generous, airy spacing
-            ====================================================== */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-          className="w-full max-w-2xl px-2 mb-6 sm:mb-8 z-10"
-        >
-          <Link
-            to={settings?.announcement?.link || '/brands'}
-            className="flex items-center justify-between px-3.5 sm:px-5 py-2.5 rounded-full liquid-glass-pill text-zinc-300 hover:text-white text-xs transition group gap-2.5 border border-white/10 hover:border-white/25 w-full min-w-0 overflow-hidden shadow-[0_4px_25px_rgba(0,0,0,0.6)]"
-          >
-            <div className="flex items-center space-x-2.5 min-w-0 flex-1 overflow-hidden">
-              {/* Sleek Indian Tricolor Micro-Indicator */}
-              <span className="flex items-center space-x-1 shrink-0">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF9933] animate-pulse" />
-                <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                <span className="w-1.5 h-1.5 rounded-full bg-[#138808]" />
-              </span>
-              <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-300 font-bold px-2 py-0.5 rounded-full bg-white/[0.06] border border-white/10 shrink-0">
-                BHARAT TECH STACK
-              </span>
-              <span className="text-zinc-200 font-medium truncate text-[11px] sm:text-xs min-w-0 flex-1">
-                Sovereign Indian Digital Ventures &bull; Bengaluru &bull; Kolkata &bull; NCR
-              </span>
-            </div>
-            <ArrowRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white group-hover:translate-x-1 transition-transform shrink-0" />
-          </Link>
         </motion.div>
 
         {/* ======================================================
