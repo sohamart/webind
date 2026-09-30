@@ -44,9 +44,99 @@ export const HomePage = () => {
           Spaced generously with breathing room, marquee in frame!
           ======================================================== */}
       <section className="relative w-full pt-6 sm:pt-8 md:pt-12 pb-8 sm:pb-10 flex flex-col items-center text-center px-4 overflow-hidden select-none">
-        {/* Top Ambient Glow */}
+        {/* Top & Center Subtle Ambient Glow (Mobile & Desktop optimized) */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-          <div className="w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] rounded-full bg-gradient-to-r from-white/[0.07] via-white/[0.02] to-transparent blur-[100px]" />
+          <div className="w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] rounded-full bg-gradient-to-tr from-[#138808]/[0.04] via-white/[0.04] to-[#FF9933]/[0.04] blur-[80px] sm:blur-[110px] pointer-events-none" />
+        </div>
+
+        {/* ========================================================
+            LEFT FLANK ART: Saffron Celestial Waveforms & Telemetry
+            (Hidden on mobile/tablet to keep mobile 100% clean and pristine)
+            ======================================================== */}
+        <div className="hidden lg:block absolute lg:left-4 xl:left-12 top-1/2 -translate-y-1/2 pointer-events-none z-0 select-none opacity-60">
+          {/* Saffron Ambient Light Bloom */}
+          <div className="absolute top-1/2 -translate-y-1/2 -left-12 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-[#FF9933]/[0.08] blur-3xl pointer-events-none" />
+
+          {/* Generative Wave Ribbon & Orbital Radii SVG */}
+          <svg
+            className="w-52 h-72 sm:w-64 sm:h-88 xl:w-80 xl:h-96"
+            viewBox="0 0 280 380"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="heroLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FF9933" stopOpacity="0.75" />
+                <stop offset="60%" stopColor="#FFFFFF" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.02" />
+              </linearGradient>
+            </defs>
+
+            {/* Fluid Parametric Waveforms */}
+            <path d="M10 30C100 120 40 220 120 350" stroke="url(#heroLeftGrad)" strokeWidth="1.2" strokeLinecap="round" />
+            <path d="M35 15C130 110 65 210 145 360" stroke="url(#heroLeftGrad)" strokeWidth="1" strokeDasharray="4 4" strokeLinecap="round" opacity="0.8" />
+            <path d="M60 40C155 130 90 230 170 340" stroke="url(#heroLeftGrad)" strokeWidth="0.8" strokeLinecap="round" opacity="0.6" />
+            <path d="M85 60C180 150 115 250 195 330" stroke="url(#heroLeftGrad)" strokeWidth="0.6" strokeDasharray="2 3" strokeLinecap="round" opacity="0.4" />
+
+            {/* Concentric Orbital Radar Arcs */}
+            <circle cx="10" cy="190" r="130" stroke="url(#heroLeftGrad)" strokeWidth="0.75" strokeDasharray="5 7" opacity="0.35" />
+            <circle cx="10" cy="190" r="170" stroke="url(#heroLeftGrad)" strokeWidth="0.5" opacity="0.2" />
+
+            {/* Hub Coordinates & Micro Crosshairs */}
+            <line x1="20" y1="280" x2="36" y2="280" stroke="rgba(255,255,255,0.25)" strokeWidth="0.75" />
+            <line x1="28" y1="272" x2="28" y2="288" stroke="rgba(255,255,255,0.25)" strokeWidth="0.75" />
+            <text x="44" y="283" fill="rgba(255,255,255,0.4)" fontSize="9" fontFamily="monospace" letterSpacing="1.5">
+              12.9716° N / 77.5946° E
+            </text>
+            <text x="44" y="297" fill="rgba(255,153,51,0.6)" fontSize="8" fontFamily="monospace" letterSpacing="2">
+              BLR // QUANTUM SOVEREIGN NODE
+            </text>
+          </svg>
+        </div>
+
+        {/* ========================================================
+            RIGHT FLANK ART: Emerald Algorithmic Contour & Telemetry
+            (Hidden on mobile/tablet to keep mobile 100% clean and pristine)
+            ======================================================== */}
+        <div className="hidden lg:block absolute lg:right-4 xl:right-12 top-1/2 -translate-y-1/2 pointer-events-none z-0 select-none opacity-60">
+          {/* Emerald Ambient Light Bloom */}
+          <div className="absolute top-1/2 -translate-y-1/2 -right-12 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-[#138808]/[0.08] blur-3xl pointer-events-none" />
+
+          {/* Generative Wave Ribbon & Orbital Radii SVG */}
+          <svg
+            className="w-52 h-72 sm:w-64 sm:h-88 xl:w-80 xl:h-96"
+            viewBox="0 0 280 380"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="heroRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#138808" stopOpacity="0.75" />
+                <stop offset="60%" stopColor="#FFFFFF" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.02" />
+              </linearGradient>
+            </defs>
+
+            {/* Symmetrical Fluid Parametric Waveforms */}
+            <path d="M270 30C180 120 240 220 160 350" stroke="url(#heroRightGrad)" strokeWidth="1.2" strokeLinecap="round" />
+            <path d="M245 15C150 110 215 210 135 360" stroke="url(#heroRightGrad)" strokeWidth="1" strokeDasharray="4 4" strokeLinecap="round" opacity="0.8" />
+            <path d="M220 40C125 130 190 230 110 340" stroke="url(#heroRightGrad)" strokeWidth="0.8" strokeLinecap="round" opacity="0.6" />
+            <path d="M195 60C100 150 165 250 85 330" stroke="url(#heroRightGrad)" strokeWidth="0.6" strokeDasharray="2 3" strokeLinecap="round" opacity="0.4" />
+
+            {/* Concentric Orbital Radar Arcs */}
+            <circle cx="270" cy="190" r="130" stroke="url(#heroRightGrad)" strokeWidth="0.75" strokeDasharray="5 7" opacity="0.35" />
+            <circle cx="270" cy="190" r="170" stroke="url(#heroRightGrad)" strokeWidth="0.5" opacity="0.2" />
+
+            {/* Hub Coordinates & Micro Crosshairs */}
+            <line x1="260" y1="280" x2="244" y2="280" stroke="rgba(255,255,255,0.25)" strokeWidth="0.75" />
+            <line x1="252" y1="272" x2="252" y2="288" stroke="rgba(255,255,255,0.25)" strokeWidth="0.75" />
+            <text x="236" y="283" fill="rgba(255,255,255,0.4)" fontSize="9" fontFamily="monospace" letterSpacing="1.5" textAnchor="end">
+              22.5726° N / 88.3639° E
+            </text>
+            <text x="236" y="297" fill="rgba(19,136,8,0.65)" fontSize="8" fontFamily="monospace" letterSpacing="2" textAnchor="end">
+              CCU // DIGITAL VENTURE CORE
+            </text>
+          </svg>
         </div>
 
         {/* ======================================================
