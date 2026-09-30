@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" fill="none">
+  <!-- Stack Adda Mark -->
+  <g transform="translate(10, 8)">
+    <rect x="0" y="0" width="44" height="44" rx="10" fill="#18181B" stroke="#27272A" stroke-width="2"/>
+    <path d="M12 16L20 22L12 28" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="23" y1="28" x2="32" y2="28" stroke="#A1A1AA" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <!-- Stack Adda Typo -->
+  <text x="68" y="38" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="22" fill="#FFFFFF" letter-spacing="-0.5">STACK ADDA</text>
+</svg>

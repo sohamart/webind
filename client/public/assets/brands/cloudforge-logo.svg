@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" fill="none">
+  <!-- Cloud Forge Mark -->
+  <g transform="translate(10, 8)">
+    <rect x="0" y="0" width="44" height="44" rx="10" fill="#18181B" stroke="#27272A" stroke-width="2"/>
+    <path d="M14 26C14 22 17 18 21 18C24.5 18 27.5 20.8 28 24.2C28.6 24.1 29.3 24 30 24C33.3 24 36 26.7 36 30C36 33.3 33.3 36 30 36H15C12.8 36 11 34.2 11 32C11 29.9 12.6 28.2 14.6 28.1" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+  <!-- Cloud Forge Typo -->
+  <text x="68" y="38" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="20" fill="#FFFFFF" letter-spacing="-0.3">CLOUD FORGE</text>
+</svg>

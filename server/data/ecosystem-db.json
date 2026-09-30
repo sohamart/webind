@@ -1,0 +1,337 @@
+{
+  "admins": [
+    {
+      "_id": "64d5bbcb6f01e58200862216",
+      "name": "Webind Superadmin",
+      "email": "admin@webindgroup.com",
+      "password": "$2b$10$HAqAyjcGJkoyNWqfcOqaZu6Ab.Q/qTRZV2xv4WvPJizQDHmsZ33Rm",
+      "role": "superadmin",
+      "avatar": "/assets/webind-symbol.png",
+      "lastLogin": null,
+      "createdAt": "2026-09-30T14:42:03.762Z",
+      "updatedAt": "2026-09-30T14:42:03.763Z"
+    }
+  ],
+  "brands": [
+    {
+      "_id": "85e9983026a61a09956b3a6c",
+      "name": "Weblets",
+      "slug": "weblets",
+      "tagline": "Modern Web Architectures & Component Systems",
+      "category": "Digital & Web Platforms",
+      "tags": [
+        "Web Platforms",
+        "UI Systems",
+        "Microfrontends",
+        "Frontend Architecture"
+      ],
+      "status": "ACTIVE",
+      "isFeatured": true,
+      "isPublished": true,
+      "shortDescription": "Next-generation web component architecture, high-performance micro-frontends, and design systems for enterprise scale.",
+      "fullDescription": "Weblets is Webind Group’s flagship digital platform brand, specializing in high-velocity web interfaces, headless design tokens, and modular cloud web applications. Engineered for sub-millisecond interaction latency and visual perfection.",
+      "brandStory": "Founded to dismantle the friction between high-level product design and raw frontend execution, Weblets bridges precision typography, fluid spatial layouts, and uncompromising responsiveness into a unified developer-designer ecosystem. Today it powers core digital interactions for tech companies worldwide.",
+      "logo": "/assets/brands/weblets-logo.svg",
+      "lightLogo": "/assets/brands/weblets-logo.svg",
+      "darkLogo": "/assets/brands/weblets-logo.svg",
+      "icon": "Layers",
+      "heroMedia": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+      ],
+      "websiteUrl": "https://weblets.io",
+      "socialUrls": {
+        "twitter": "https://twitter.com/weblets_io",
+        "linkedin": "https://linkedin.com/company/weblets",
+        "github": "https://github.com/weblets"
+      },
+      "launchDate": "March 2024",
+      "accentColor": "#FFFFFF",
+      "displayOrder": 1,
+      "products": [
+        {
+          "name": "Weblets Core UI",
+          "description": "Headless, accessible design engine with motion primitives",
+          "status": "LIVE",
+          "link": "https://weblets.io/core"
+        },
+        {
+          "name": "Canvas Studio",
+          "description": "Spatial web prototyping and real-time design tokens compiler",
+          "status": "LIVE",
+          "link": "https://weblets.io/studio"
+        },
+        {
+          "name": "Edge Micro-Frontends",
+          "description": "Sub-millisecond dynamic component delivery via Edge CDN",
+          "status": "BETA",
+          "link": "https://weblets.io/edge"
+        }
+      ],
+      "services": [
+        {
+          "name": "Enterprise Design System Engineering",
+          "description": "Custom tokenized design infrastructures tailored to global brands"
+        },
+        {
+          "name": "High-Performance Frontend Audits",
+          "description": "Deep runtime profiling, Core Web Vitals optimization, and architecture overhaul"
+        }
+      ],
+      "seoTitle": "Weblets — Modern Web Architectures & Component Systems",
+      "seoDescription": "Weblets powers high-velocity web interfaces and tokenized component systems for the modern digital era.",
+      "createdAt": "2026-09-30T14:42:03.765Z",
+      "updatedAt": "2026-09-30T14:42:03.765Z"
+    },
+    {
+      "_id": "8ac3187265627cf528563f8f",
+      "name": "Stack Adda",
+      "slug": "stack-adda",
+      "tagline": "The Sovereign Developer Community & Engineering Hub",
+      "category": "Developer Ecosystem",
+      "tags": [
+        "Developer Community",
+        "Open Source",
+        "Engineering Playbooks",
+        "Tech Hub"
+      ],
+      "status": "ACTIVE",
+      "isFeatured": true,
+      "isPublished": true,
+      "shortDescription": "A collaborative knowledge base, developer tools matrix, and engineering community hub for modern technologists.",
+      "fullDescription": "Stack Adda is the community and tooling flagship of Webind Group. Bringing together builders, architects, and open-source contributors, Stack Adda creates benchmarks, architectural playbooks, and developer productivity suites.",
+      "brandStory": "Born from the vibrant discussions of engineers solving complex distributed systems and modern web stacks, Stack Adda transforms raw technical discourse into curated architectural standards, reusable stacks, and thriving developer gatherings. It represents the collaborative engineering heart of Webind Group.",
+      "logo": "/assets/brands/stackadda-logo.svg",
+      "lightLogo": "/assets/brands/stackadda-logo.svg",
+      "darkLogo": "/assets/brands/stackadda-logo.svg",
+      "icon": "Terminal",
+      "heroMedia": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop"
+      ],
+      "websiteUrl": "https://stackadda.com",
+      "socialUrls": {
+        "twitter": "https://twitter.com/stackadda",
+        "linkedin": "https://linkedin.com/company/stackadda",
+        "github": "https://github.com/stackadda",
+        "discord": "https://discord.gg/stackadda"
+      },
+      "launchDate": "August 2024",
+      "accentColor": "#E4E4E7",
+      "displayOrder": 2,
+      "products": [
+        {
+          "name": "Stack Matrix",
+          "description": "Interactive full-stack architecture comparator and boilerplate generator",
+          "status": "LIVE",
+          "link": "https://stackadda.com/matrix"
+        },
+        {
+          "name": "Adda DevCast",
+          "description": "Deep-dive audio & video engineering sessions with industry architects",
+          "status": "LIVE",
+          "link": "https://stackadda.com/devcast"
+        },
+        {
+          "name": "DevPulse Insights",
+          "description": "Real-time developer sentiment and tech adoption telemetry",
+          "status": "BETA",
+          "link": "https://stackadda.com/pulse"
+        }
+      ],
+      "services": [
+        {
+          "name": "Developer Community Activation",
+          "description": "Technical hackathons, deep-dive workshops, and developer advocacy programs"
+        },
+        {
+          "name": "Technology Stack Assessment",
+          "description": "Architectural consultation for startups selecting their scalable foundation"
+        }
+      ],
+      "seoTitle": "Stack Adda — Sovereign Developer Community & Engineering Hub",
+      "seoDescription": "Stack Adda unites modern developers with architectural benchmarks, tech toolkits, and curated tech community hubs.",
+      "createdAt": "2026-09-30T14:42:03.765Z",
+      "updatedAt": "2026-09-30T14:42:03.765Z"
+    },
+    {
+      "_id": "e53c2550fdae80610db3d42a",
+      "name": "Neural Nexus",
+      "slug": "neural-nexus",
+      "tagline": "Autonomous Agentic Intelligence & Cognitive Workflows",
+      "category": "Artificial Intelligence",
+      "tags": [
+        "AI Agents",
+        "Autonomous Workflows",
+        "Neural Networks",
+        "Machine Learning"
+      ],
+      "status": "COMING_SOON",
+      "isFeatured": true,
+      "isPublished": true,
+      "shortDescription": "Autonomous multi-agent orchestration infrastructure for complex enterprise reasoning and synthetic workflows.",
+      "fullDescription": "Neural Nexus represents Webind Group’s deep-tech venture into self-organizing agent swarms, automated code synthesis, and structured domain intelligence.",
+      "brandStory": "Architected in stealth within the Webind Research Labs, Neural Nexus is crafting the cognitive backbone for next-decade autonomous computing.",
+      "logo": "/assets/brands/neuralnexus-logo.svg",
+      "icon": "Cpu",
+      "heroMedia": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop"
+      ],
+      "websiteUrl": "",
+      "socialUrls": {
+        "twitter": "https://twitter.com/neuralnexus_ai"
+      },
+      "launchDate": "Q3 2026",
+      "accentColor": "#A1A1AA",
+      "displayOrder": 3,
+      "products": [
+        {
+          "name": "Swarm Core",
+          "description": "Multi-agent asynchronous execution runtime with persistent memory",
+          "status": "IN_DEV"
+        }
+      ],
+      "services": [],
+      "seoTitle": "Neural Nexus — Autonomous Agentic Intelligence",
+      "seoDescription": "Autonomous agentic infrastructure by Webind Group.",
+      "createdAt": "2026-09-30T14:42:03.765Z",
+      "updatedAt": "2026-09-30T14:42:03.765Z"
+    },
+    {
+      "_id": "f86a061071308509d406baba",
+      "name": "Cloud Forge",
+      "slug": "cloud-forge",
+      "tagline": "Sovereign Cloud Orchestration & Edge Mesh",
+      "category": "SaaS & Cloud Infrastructure",
+      "tags": [
+        "Cloud",
+        "DevOps",
+        "Edge Infrastructure",
+        "Kubernetes"
+      ],
+      "status": "COMING_SOON",
+      "isFeatured": false,
+      "isPublished": true,
+      "shortDescription": "Declarative multi-cloud provisioning with unified observability and automated zero-trust security mesh.",
+      "fullDescription": "Cloud Forge simplifies distributed infrastructure into a declarative, developer-first orchestration plane.",
+      "brandStory": "Building the next generation of friction-free edge deployments for Webind Group entities and partner enterprises.",
+      "logo": "/assets/brands/cloudforge-logo.svg",
+      "icon": "Cloud",
+      "heroMedia": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+      "gallery": [],
+      "websiteUrl": "",
+      "socialUrls": {},
+      "launchDate": "Q4 2026",
+      "accentColor": "#71717A",
+      "displayOrder": 4,
+      "products": [],
+      "services": [],
+      "seoTitle": "Cloud Forge — Sovereign Cloud Orchestration",
+      "seoDescription": "Cloud Forge edge mesh and sovereign cloud by Webind Group.",
+      "createdAt": "2026-09-30T14:42:03.765Z",
+      "updatedAt": "2026-09-30T14:42:03.765Z"
+    }
+  ],
+  "siteSettings": {
+    "_id": "7cdaf8263a4eca8ca78c15c2",
+    "siteName": "WEBIND GROUP",
+    "tagline": "We bind ideas.",
+    "heroTitle": "WE BIND IDEAS.",
+    "heroSubtitle": "A technology group building brands, products and ventures for what’s next.",
+    "heroCtaText": "EXPLORE BRANDS",
+    "symbolUrl": "/assets/webind-symbol.png",
+    "logoUrl": "/assets/webind-full-logo.png",
+    "faviconUrl": "/assets/webind-symbol.png",
+    "defaultTheme": "dark",
+    "metrics": [
+      {
+        "label": "Active Brands",
+        "value": "4+",
+        "description": "Specialized technology entities",
+        "icon": "Layers"
+      },
+      {
+        "label": "Ventures Built",
+        "value": "8+",
+        "description": "Across AI, Web, SaaS & Tools",
+        "icon": "Rocket"
+      },
+      {
+        "label": "Products Deployed",
+        "value": "25+",
+        "description": "High-availability software",
+        "icon": "Cpu"
+      },
+      {
+        "label": "Global Footprint",
+        "value": "18+",
+        "description": "Countries impacted",
+        "icon": "Globe"
+      }
+    ],
+    "aboutHeadline": "A unified architecture for technology creation.",
+    "aboutBody": "WEBIND GROUP operates at the intersection of technological ambition, relentless craftsmanship, and ecosystem design. We conceptualize, build, scale, and nurture independent brands that push the boundaries of digital experiences, developer platforms, and future intelligent software.",
+    "ecosystemPhilosophy": "Every brand in our ecosystem retains sovereign autonomy while leveraging unified engineering standards, shared intelligence, and an uncompromising obsession with quality.",
+    "announcement": {
+      "enabled": true,
+      "text": "WEBIND 2.0 Digital Operating Ecosystem is now live.",
+      "link": "/brands"
+    },
+    "contact": {
+      "email": "contact@webindgroup.com",
+      "partnerships": "ventures@webindgroup.com",
+      "location": "Global Digital Architecture"
+    },
+    "socials": {
+      "twitter": "https://twitter.com/webindgroup",
+      "linkedin": "https://linkedin.com/company/webindgroup",
+      "github": "https://github.com/webindgroup",
+      "discord": ""
+    },
+    "footerText": "Architecting digital paradigms, high-velocity developer systems, and sovereign intelligent software.",
+    "copyright": "© 2026 WEBIND GROUP. All rights reserved.",
+    "seo": {
+      "title": "WEBIND GROUP — We Bind Ideas",
+      "description": "WEBIND GROUP is a parent technology company operating an ecosystem of independent brands, digital ventures, and next-generation software platforms.",
+      "ogImage": "/assets/webind-full-logo.png",
+      "robotsText": "User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: https://webindgroup.com/sitemap.xml"
+    },
+    "createdAt": "2026-09-30T14:42:03.764Z",
+    "updatedAt": "2026-09-30T14:42:03.764Z"
+  },
+  "media": [],
+  "activityLogs": [
+    {
+      "_id": "89877b085b609ba3c100e227",
+      "action": "ADMIN_LOGIN",
+      "adminEmail": "admin@webindgroup.com",
+      "adminName": "Webind Superadmin",
+      "resource": "Auth",
+      "details": "Admin admin@webindgroup.com signed into the Webind OS management portal",
+      "ipAddress": "::1",
+      "createdAt": "2026-09-30T15:01:53.422Z"
+    },
+    {
+      "_id": "0f6bbac20eb1d3280362da05",
+      "action": "ADMIN_LOGIN",
+      "adminEmail": "admin@webindgroup.com",
+      "adminName": "Webind Superadmin",
+      "resource": "Auth",
+      "details": "Admin admin@webindgroup.com signed into the Webind OS management portal",
+      "ipAddress": "::1",
+      "createdAt": "2026-09-30T14:43:53.184Z"
+    },
+    {
+      "_id": "520eadee0602ed00116ef48a",
+      "action": "BRAND_CREATED",
+      "adminEmail": "admin@webindgroup.com",
+      "adminName": "System Seed",
+      "resource": "Ecosystem",
+      "details": "Initial ecosystem brands seeded (Weblets, Stack Adda, Neural Nexus, Cloud Forge)",
+      "createdAt": "2026-09-30T14:42:03.766Z"
+    }
+  ]
+}

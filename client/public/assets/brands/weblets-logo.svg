@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <!-- Weblets Mark -->
+  <g transform="translate(10, 8)">
+    <rect x="0" y="22" width="26" height="18" rx="4" fill="#FFFFFF" fill-opacity="0.2"/>
+    <rect x="8" y="12" width="26" height="18" rx="4" fill="#FFFFFF" fill-opacity="0.6"/>
+    <rect x="16" y="2" width="26" height="18" rx="4" fill="#FFFFFF"/>
+    <circle cx="29" cy="11" r="3" fill="#000000"/>
+  </g>
+  <!-- Weblets Typo -->
+  <text x="68" y="38" font-family="Inter, -apple-system, sans-serif" font-weight="800" font-size="24" fill="#FFFFFF" letter-spacing="-0.5">WEBLETS</text>
+  <circle cx="188" cy="36" r="3" fill="#FFFFFF"/>
+</svg>
