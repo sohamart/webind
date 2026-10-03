@@ -19,7 +19,7 @@ export const MobileNav = () => {
   }
 
   return (
-    <nav className="fixed bottom-4 left-4 right-4 z-40 md:hidden select-none">
+    <nav className="fixed bottom-4 left-4 right-4 z-[100] md:hidden select-none">
       <div className="max-w-md mx-auto px-3 py-2 rounded-full liquid-glass-pill flex items-center justify-around">
         {navItems.map((item) => {
           const Icon = item.icon;

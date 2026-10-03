@@ -31,7 +31,7 @@ export const ToastProvider = ({ children }) => {
   return (
     <ToastContext.Provider value={{ addToast, removeToast }}>
       {children}
-      <div className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-50 flex flex-col space-y-2 pointer-events-none max-w-sm w-full">
+      <div className="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-[300] flex flex-col space-y-2 pointer-events-none max-w-sm w-full">
         <AnimatePresence>
           {toasts.map((toast) => (
             <motion.div

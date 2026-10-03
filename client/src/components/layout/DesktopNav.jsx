@@ -22,7 +22,7 @@ export const DesktopNav = () => {
   }
 
   return (
-    <header className="hidden md:block fixed top-5 inset-x-0 z-40 max-w-4xl mx-auto px-4 select-none">
+    <header className="hidden md:block fixed top-5 inset-x-0 z-[100] max-w-4xl mx-auto px-4 select-none">
       <div className="flex items-center justify-between px-5 py-2.5 rounded-full liquid-glass-pill transition-all duration-300">
         {/* Brand Identity */}
         <Link to="/" className="flex items-center space-x-3 group">

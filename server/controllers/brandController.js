@@ -50,10 +50,17 @@ const getPublicBrands = async (req, res, next) => {
       ];
     }
 
-    const brands = await Brand.find(query).sort({
-      displayOrder: 1,
-      createdAt: -1,
-    });
+    let brands = [];
+    try {
+      brands = await Brand.find(query).sort({
+        displayOrder: 1,
+        createdAt: -1,
+      });
+    } catch (queryErr) {
+      console.warn('[Brand Query Notice]: Falling back to local store due to query error:', queryErr.message);
+      const { store } = require('../config/mockStore');
+      brands = store.data.brands?.filter((b) => b.isPublished && b.status !== 'ARCHIVED') || [];
+    }
 
     res.status(200).json({
       success: true,
@@ -72,11 +79,20 @@ const getPublicBrandBySlug = async (req, res, next) => {
   try {
     const { slug } = req.params;
 
-    const brand = await Brand.findOne({
-      slug: slug.toLowerCase(),
-      isPublished: true,
-      status: { $ne: 'ARCHIVED' },
-    });
+    let brand = null;
+    try {
+      brand = await Brand.findOne({
+        slug: slug.toLowerCase(),
+        isPublished: true,
+        status: { $ne: 'ARCHIVED' },
+      });
+    } catch (queryErr) {
+      console.warn('[Brand Slug Query Notice]: Falling back to local store:', queryErr.message);
+      const { store } = require('../config/mockStore');
+      brand = store.data.brands?.find(
+        (b) => b.slug.toLowerCase() === slug.toLowerCase() && b.isPublished && b.status !== 'ARCHIVED'
+      ) || null;
+    }
 
     if (!brand) {
       return res.status(404).json({

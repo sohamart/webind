@@ -14,7 +14,7 @@ export const Header = () => {
   }
 
   return (
-    <header className="md:hidden fixed top-0 inset-x-0 z-40 w-full px-4 py-2.5 pt-safe bg-[#050508]/85 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_4px_25px_rgba(0,0,0,0.7)] select-none">
+    <header className="md:hidden fixed top-0 inset-x-0 z-[100] w-full px-4 py-2.5 pt-safe bg-[#050508]/85 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_4px_25px_rgba(0,0,0,0.7)] select-none">
       <div className="flex items-center justify-between max-w-lg mx-auto">
         {/* Brand Identity with Liquid Glass Pedestal */}
         <Link to="/" className="flex items-center space-x-2.5 tap-bounce">

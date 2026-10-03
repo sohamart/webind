@@ -31,11 +31,18 @@ const connectDB = async () => {
   return null;
 };
 
-const isEmbedded = () => useEmbeddedStore;
+const isEmbedded = () => {
+  if (useEmbeddedStore) return true;
+  if (!isConnected || !mongoose.connection || mongoose.connection.readyState !== 1) {
+    return true;
+  }
+  return false;
+};
 
 const disconnectDB = async () => {
   if (isConnected) {
     await mongoose.disconnect();
+    isConnected = false;
   }
 };
 

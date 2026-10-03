@@ -47,7 +47,7 @@ export const GlobalPageTransition = () => {
   return (
     <AnimatePresence>
       {isTransitioning && (
-        <div className="fixed inset-0 z-[999999] pointer-events-none overflow-hidden">
+        <div className="fixed inset-0 z-40 pointer-events-none overflow-hidden">
           {/* ====================================================
               LEFT OBSIDIAN SHUTTER (Hardware-Accelerated)
               ==================================================== */}

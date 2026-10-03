@@ -79,7 +79,7 @@ export const CommandPalette = () => {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-start justify-center p-0 md:p-6 sm:pt-20">
+      <div className="fixed inset-0 z-[200] flex items-start justify-center p-0 md:p-6 sm:pt-20">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}

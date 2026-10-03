@@ -3,42 +3,55 @@ const { logActivity } = require('../utils/logger');
 
 // Ensure a default SiteSettings document exists
 const getOrCreateSettings = async () => {
-  let settings = await SiteSettings.findOne();
+  let settings = null;
+  try {
+    settings = await SiteSettings.findOne();
+  } catch (err) {
+    console.warn('[SiteSettings Notice]: Falling back to local store:', err.message);
+    const { store } = require('../config/mockStore');
+    return store.data.siteSettings;
+  }
+
   if (!settings) {
-    settings = await SiteSettings.create({
-      siteName: 'WEBIND GROUP',
-      tagline: 'We bind ideas.',
-      heroTitle: 'WE BIND IDEAS.',
-      heroSubtitle: 'A technology group building brands, products and ventures for what’s next.',
-      heroCtaText: 'EXPLORE BRANDS',
-      metrics: [
-        { label: 'Active Brands', value: '4+', description: 'Specialized technology entities', icon: 'Layers' },
-        { label: 'Ventures Built', value: '8+', description: 'Across AI, Web, SaaS & Tools', icon: 'Rocket' },
-        { label: 'Products Deployed', value: '25+', description: 'High-availability software', icon: 'Cpu' },
-        { label: 'Global Footprint', value: '18+', description: 'Countries impacted', icon: 'Globe' },
-      ],
-      aboutHeadline: 'A unified architecture for technology creation.',
-      aboutBody:
-        'WEBIND GROUP operates at the intersection of technological ambition, relentless craftsmanship, and ecosystem design. We conceptualize, build, scale, and nurture independent brands that push the boundaries of digital experiences, developer platforms, and future intelligent software.',
-      ecosystemPhilosophy:
-        'Every brand in our ecosystem retains sovereign autonomy while leveraging unified engineering standards, shared intelligence, and an uncompromising obsession with quality.',
-      announcement: {
-        enabled: true,
-        text: 'WEBIND 2.0 Digital Operating Ecosystem is now live.',
-        link: '/brands',
-      },
-      contact: {
-        email: 'hello@webindgroup.com',
-        partnerships: 'ventures@webindgroup.com',
-        location: 'Global Digital Architecture',
-      },
-      socials: {
-        twitter: 'https://twitter.com/webindgroup',
-        linkedin: 'https://linkedin.com/company/webindgroup',
-        github: 'https://github.com/webindgroup',
-        discord: '',
-      },
-    });
+    try {
+      settings = await SiteSettings.create({
+        siteName: 'WEBIND GROUP',
+        tagline: 'We bind ideas.',
+        heroTitle: 'WE BIND IDEAS.',
+        heroSubtitle: 'A technology group building brands, products and ventures for what’s next.',
+        heroCtaText: 'EXPLORE BRANDS',
+        metrics: [
+          { label: 'Active Brands', value: '4+', description: 'Specialized technology entities', icon: 'Layers' },
+          { label: 'Ventures Built', value: '8+', description: 'Across AI, Web, SaaS & Tools', icon: 'Rocket' },
+          { label: 'Products Deployed', value: '25+', description: 'High-availability software', icon: 'Cpu' },
+          { label: 'Global Footprint', value: '18+', description: 'Countries impacted', icon: 'Globe' },
+        ],
+        aboutHeadline: 'A unified architecture for technology creation.',
+        aboutBody:
+          'WEBIND GROUP operates at the intersection of technological ambition, relentless craftsmanship, and ecosystem design. We conceptualize, build, scale, and nurture independent brands that push the boundaries of digital experiences, developer platforms, and future intelligent software.',
+        ecosystemPhilosophy:
+          'Every brand in our ecosystem retains sovereign autonomy while leveraging unified engineering standards, shared intelligence, and an uncompromising obsession with quality.',
+        announcement: {
+          enabled: true,
+          text: 'WEBIND 2.0 Digital Operating Ecosystem is now live.',
+          link: '/brands',
+        },
+        contact: {
+          email: 'hello@webindgroup.com',
+          partnerships: 'ventures@webindgroup.com',
+          location: 'Global Digital Architecture',
+        },
+        socials: {
+          twitter: 'https://twitter.com/webindgroup',
+          linkedin: 'https://linkedin.com/company/webindgroup',
+          github: 'https://github.com/webindgroup',
+          discord: '',
+        },
+      });
+    } catch (createErr) {
+      const { store } = require('../config/mockStore');
+      return store.data.siteSettings;
+    }
   }
   return settings;
 };

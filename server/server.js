@@ -202,13 +202,22 @@ const startServer = async () => {
     await ensureInitialized();
 
     if (!process.env.VERCEL) {
-      app.listen(PORT, () => {
+      const serverInstance = app.listen(PORT, () => {
         console.log(`====================================================`);
         console.log(`⚡ WEBIND GROUP ENGINE ONLINE`);
         console.log(`⚡ Port: http://localhost:${PORT}`);
         console.log(`⚡ Mode: ${process.env.NODE_ENV || 'development'}`);
         console.log(`⚡ Superadmin: ${process.env.ADMIN_DEFAULT_EMAIL || 'admin@webindgroup.com'}`);
         console.log(`====================================================`);
+      });
+
+      serverInstance.on('error', (err) => {
+        if (err.code === 'EADDRINUSE') {
+          console.error(`\n❌ [PORT CONFLICT]: Port ${PORT} is already occupied by another running process.`);
+          console.error(`👉 Please terminate the process using port ${PORT} or specify a different PORT in server/.env.\n`);
+        } else {
+          console.error('Server error:', err);
+        }
       });
     }
   } catch (err) {
